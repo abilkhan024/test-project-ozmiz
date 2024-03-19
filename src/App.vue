@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Layout, LayoutContent, LayoutHeader, Button } from "ant-design-vue";
+import { Layout, LayoutContent, LayoutHeader } from "ant-design-vue";
 import NotesList from "./components/NotesList.vue";
 </script>
 

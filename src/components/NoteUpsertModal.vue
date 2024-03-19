@@ -11,7 +11,7 @@ import {
 import { Note, NoteCreateDTO } from "../services/notes/model";
 import { computed, ref } from "vue";
 import { noteService } from "../services/notes";
-const props = defineProps<{ note?: Note; visible: boolean }>();
+const props = defineProps<{ note: Note | null; visible: boolean }>();
 const emit = defineEmits<{
   (e: "update:visible", val: boolean): void;
   (e: "finish"): void;

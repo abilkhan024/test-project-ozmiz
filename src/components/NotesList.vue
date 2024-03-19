@@ -20,7 +20,7 @@ const columns: Column[] = [
 ];
 const { pending, data, refresh } = useAsyncData(noteService.getList);
 
-const selectedNote = ref<Note | null>();
+const selectedNote = ref<Note | null>(null);
 const upsertModalVisible = ref(false);
 const infoModalVisible = ref(false);
 const selectNote = (note: Note) => {
@@ -58,13 +58,13 @@ const deleteById = (id: number) => {
         <Popconfirm title="Sure to delete?" @confirm="deleteById(record.id)">
           <Button danger> Delete</Button>
         </Popconfirm>
-        <Button style="margin-left: 12px" @click="selectNote(record)">
+        <Button style="margin-left: 12px" @click="selectNote(record as Note)">
           Edit
         </Button>
         <Button
           type="primary"
           style="margin-left: 12px"
-          @click="viewInfo(record)"
+          @click="viewInfo(record as Note)"
         >
           View info
         </Button>
